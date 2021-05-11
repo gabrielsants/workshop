@@ -1,0 +1,44 @@
+<table class="table">
+  <tr>
+    <th>
+      <p>{{"Select a product" | translate}}</p>
+      <mat-form-field appearance="fill">
+        <mat-label>{{'Select a option' | translate}}</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let product of products" [value]="product" (click)="setProduct(product)"
+            >{{product.name}}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </th>
+
+    <th>
+      <p translate>{{"Select a line" | translate}}</p>
+      <mat-form-field appearance="fill">
+        <mat-label>{{'Select a option' | translate}}</mat-label>
+        <mat-select [disabled]="disabled">
+          <mat-option *ngFor="let line of filterProductLine()" [value]="line" (click)="setProductLine(line)"
+            >{{line.name}}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </th>
+
+    <th>
+      <p>{{'Select a kind' | translate}}</p>
+      <mat-form-field appearance="fill">
+        <mat-label>{{'Select a option' | translate}}</mat-label>
+        <mat-select [disabled]="disabled">
+          <mat-option *ngFor="let kind of kinds" [value]="kind.id" (click)="setFileKind(kind.id)"
+            >{{kind.viewValue | translate}}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </th>
+  </tr>
+</table>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button mat-raised-button (click)="close()">{{"Close" | translate}}</button>&nbsp;
+  <button mat-raised-button color="primary" (click)="submit()">{{"Submit" | translate}}</button>
+</div>

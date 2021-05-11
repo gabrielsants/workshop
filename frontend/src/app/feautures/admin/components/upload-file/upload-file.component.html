@@ -1,0 +1,22 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title translate>Upload file</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload />
+
+      <div class="file-upload">
+        <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+        
+        {{ fileName || 'No file uploaded yet.' | translate }}
+      </div>
+    </mat-card-content>
+    <mat-card-footer>
+      <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
+    </mat-card-footer>
+  </mat-card>
+
+</div>

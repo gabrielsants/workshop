@@ -1,0 +1,40 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title translate>Register Product Line</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form" [formGroup]="productForm">
+        <table class="table">
+          <tr>
+            <th>
+              <p translate>Define an name</p>
+              <mat-form-field class="example-full-width">
+                <mat-label translate>Name</mat-label>
+                <input formControlName="name" matInput #message maxlength="90" placeholder="Momentum ..." />
+                <mat-hint align="start"><strong translate>Ex: MF 4200, MF 1200 ...</strong> </mat-hint>
+                <mat-hint align="end">{{ message.value.length }} / 90</mat-hint>
+              </mat-form-field>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <p translate>Select an product</p>
+              <mat-form-field class="example-full-width">
+                <mat-label translate>Select an option</mat-label>
+                <mat-select formControlName="product">
+                  <mat-option *ngFor="let product of products" [value]="product"> {{ product.name }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </th>
+          </tr>
+        </table>
+      </form>
+
+      <button mat-raised-button color="primary" (click)="submit()"><span translate>Submit</span></button>
+    </mat-card-content>
+    <mat-card-footer>
+      <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
+    </mat-card-footer>
+  </mat-card>
+</div>

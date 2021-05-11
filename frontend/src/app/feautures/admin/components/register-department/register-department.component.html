@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title translate>Register Department</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form" [formGroup]="departmentForm">
+        <p translate>Define an name</p>
+        <mat-form-field class="example-full-width">
+          <mat-label translate>Name</mat-label>
+          <input formControlName="name" matInput #message maxlength="45" placeholder="Diretoria ..." />
+          <mat-hint align="start"><strong translate>Ex: Diretoria ...</strong> </mat-hint>
+          <mat-hint align="end">{{ message.value.length }} / 45</mat-hint>
+        </mat-form-field>
+      </form>
+
+      <button mat-raised-button color="primary" (click)="submit()"><span translate>Submit</span></button>
+    </mat-card-content>
+    <mat-card-footer>
+      <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
+    </mat-card-footer>
+  </mat-card>
+</div>

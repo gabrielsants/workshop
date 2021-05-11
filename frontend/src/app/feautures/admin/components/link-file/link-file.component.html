@@ -1,0 +1,48 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title translate>Link file </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="mat-elevation-z2">
+        <table mat-table [dataSource]="dataSource">
+          <!-- id Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+          </ng-container>
+
+          <!-- filename Column -->
+          <ng-container matColumnDef="filename">
+            <th mat-header-cell *matHeaderCellDef>{{'Filename' | translate}}</th>
+            <td mat-cell *matCellDef="let element">{{ element.filename }}</td>
+          </ng-container>
+
+          <!-- productModel -->
+          <ng-container matColumnDef="productModel">
+            <th mat-header-cell *matHeaderCellDef>{{'Product Model' | translate}}</th>
+            <td mat-cell *matCellDef="let element">{{ element.productModel?.name }}</td>
+          </ng-container>
+
+          <!-- buttons Column -->
+          <ng-container matColumnDef="*">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <!-- <button mat-button matTooltip="View" (click)="setFile(element)"><mat-icon>preview</mat-icon></button> -->
+              <button mat-button matTooltip="Link" (click)="setFile(element)"><mat-icon>link</mat-icon></button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+      <br />
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button mat-raised-button color="primary" (click)="reload()"><span translate>Reload</span></button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

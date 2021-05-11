@@ -1,0 +1,15 @@
+<div class="container">
+  <mat-form-field class="example-full-width">
+    <mat-label translate>Name</mat-label>
+    <input matInput #message maxlength="45" placeholder="Diretoria ..." [value]="data.name" />
+    <mat-hint align="start"><strong translate>Ex: Diretoria ...</strong> </mat-hint>
+    <mat-hint align="end">{{ message.value.length }} / 45</mat-hint>
+  </mat-form-field>
+
+  <br />
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button mat-raised-button (click)="close()"><span translate>Close</span></button>&nbsp;
+    <button mat-raised-button color="primary" (click)="submit(message.value)"><span translate>Submit</span></button>
+  </div>
+</div>

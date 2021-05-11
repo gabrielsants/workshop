@@ -1,0 +1,38 @@
+{
+  "generator-ngx-rocket": {
+    "version": "9.2.0",
+    "props": {
+      "location": "path",
+      "strict": false,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "usePrefix": true,
+      "target": [
+        "web"
+      ],
+      "pwa": true,
+      "ui": "material",
+      "layout": "side-menu",
+      "auth": true,
+      "lazy": true,
+      "angulartics": false,
+      "languages": [
+        "es-ES",
+        "pt-BR"
+      ],
+      "tools": [
+        "prettier",
+        "hads",
+        "compodoc"
+      ],
+      "utility": [],
+      "deploy": "none",
+      "appName": "workshop",
+      "projectName": "workshop",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": []
+    }
+  }
+}

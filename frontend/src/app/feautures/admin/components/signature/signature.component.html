@@ -1,0 +1,112 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{"Create a signature" | translate}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+            <div>
+                <form class="example-form" [formGroup]="signatureForm" (ngSubmit)="generate()">
+                    <table>
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>{{"Full name" | translate}}</mat-label>
+                                    <input formControlName="full_name" matInput placeholder="Ex: Anakin Skywlaker" />
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>{{"Phone" | translate}}</mat-label>
+                                    <span matPrefix>+55 &nbsp;</span>
+                                    <input type="tel" formControlName="phone" matInput placeholder="(64) 99999-9999">
+                                    <mat-icon matSuffix>mode_edit</mat-icon>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>{{"Office" | translate}}</mat-label>
+                                    <input formControlName="office" matInput placeholder="Ex: Gerente" />
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>{{"Skype" | translate}}</mat-label>
+                                    <input formControlName="skype" matInput
+                                        placeholder="Ex. anakin.skywalker@volmaq.com.br" />
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Email</mat-label>
+                                    <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher"
+                                        placeholder="Ex. anakin.skywalker@volmaq.com.br" />
+                                    <mat-error
+                                        *ngIf="signatureForm.hasError('email') && !signatureForm.hasError('required')">
+                                        {{'Please enter a valid email address' | translate}}
+                                    </mat-error>
+                                    <mat-error *ngIf="signatureForm.hasError('required')"> Email is
+                                        <strong>required</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>{{'Select an address' | translate}}</strong>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>{{'Select a option' | translate}}</mat-label>
+                                    <mat-select formControlName="address">
+                                        <mat-option *ngFor="let address of addressList" [value]="address">{{ address.value }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!signatureForm.valid">{{
+                        'Generate' | translate }}</button>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div *ngIf="isVisible" class="container">
+    <mat-card>
+        <mat-card-content>
+            <div id="signature">
+                <table width="720" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td style="width:212px;"><img src="https://i.ibb.co/3p4F7W2/massey.png"
+                                    alt="Massey Ferguson" width="212" height="130"></td>
+                            <td
+                                style="font-family:Arial, Helvetica, sans-serif; color:#666666; padding-top:24px; padding-left:25px;padding-bottom:9px;">
+                                <div style="font-size:13px; font-weight:bold;">{{signature.full_name}}</div>
+                                <div style="font-size:11px;">{{signature.office}}</div>
+                                <div
+                                    style="font-family:Arial, Helvetica, sans-serif;width:170px;font-size:14px; font-weight:bold; color:#E73030;">
+                                    {{signature.dealership}}</div>
+                                <div style="font-size:11px;">{{signature.address.value}}
+                                    <br>{{signature.address?.cep}}
+                                </div>
+                                <div style="font-size:11px;">Telefone: {{signature.phone}}</div>
+                                <div style="font-size:11px;">Skype: {{signature.skype}}</div>
+                                <div style="font-size:11px;"><a href={{signature.site}}
+                                        target="_blank">{{signature.site}}</a></div>
+                                <div style="font-size:11px;"><a href="mailto:{{signature.email}}"
+                                        style="color:#666666;">{{signature.email}}</a></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>
