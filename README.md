@@ -3,20 +3,31 @@
 </h1>
 <p align="center">💻 Sistema de gestão de arquivos por tipo de usuário e criação de assinatura.</p>
 
-
-<p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#roadmap">Roadmap</a> • 
- <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuicao">Contribuição</a> • 
- <a href="#licenc-a">Licença</a> • 
- <a href="#autor">Autor</a>
-</p>
-
-
 <h4 align="center"> 
-	🚧  Workshop 🚀 Em construção...  🚧
+	🚧  Workshop 🚀 em modo produção...  🚧
 </h4>
+
+
+![Badge](https://img.shields.io/github/license/gabrielsants/workshop)
+![Badge](https://img.shields.io/github/forks/gabrielsants/workshop)
+![Badge](https://img.shields.io/github/issues/gabrielsants/workshop)
+![Badge](https://img.shields.io/github/stars/gabrielsants/workshop)
+<a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fgabrielsants%2Fworkshop"><img alt="Twitter" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fgbxsaints"></a>
+
+<!--ts-->
+   * [Features](#Features)
+   * [Como executar o projeto](#como-executar-o-projeto)
+      * [Pré-requisitos](#pre-requisitos)
+      * [Rodando o Backend (servidor)](#backend)
+      * [Rodando a aplicação web (Frontend)](#frontend)
+      * [Database](#database)
+   * [Tecnologias](#tecnologias)
+      * [Web system](#web-system)
+      * [Server](#server)
+   * [Como contribuir para o projeto](#como-contribuir-para-o-projeto)
+   * [Licença](#licenc-a)
+<!--te-->
+
 
 ## 💻 Sobre o projeto
 💻 Workshop - é um sistema pensado e criado para a empresa [Volmaq](volmaq.com.br) para cadastrar manuais e catálogos a fim da facilitar o acesso dos mesmos por seus colaboradores.
@@ -126,7 +137,7 @@ Os scripts e o modelo estão na pasta `database`.
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-#### **Website**  ([Angular 11](https://angular.io/)  +  [TypeScript](https://www.typescriptlang.org/))
+#### **Web system**  ([Angular 11](https://angular.io/)  +  [TypeScript](https://www.typescriptlang.org/))
 
 -   **[Angular Material](https://material.angular.io/)**
 -   **[Bootstrap](https://getbootstrap.com/)**
@@ -159,4 +170,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
+
 Feito com ❤️ por Gabriel Santos 👋🏽 [Entre em contato!](https://www.linkedin.com/in/dev-gabriel-santos/)
+
+<p>
+	<a href="https://www.buymeacoffee.com/gabrielsaints">
+		<img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
+		height="50" width="210" alt="gabrielsaints"/>
+	</a>
+</p>
+<br>
