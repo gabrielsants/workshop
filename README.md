@@ -16,16 +16,16 @@
 
 <!--ts-->
    * [Features](#Features)
-   * [Como executar o projeto](#como-executar-o-projeto)
-      * [Pré-requisitos](#pre-requisitos)
-      * [Rodando o Backend (servidor)](#backend)
-      * [Rodando a aplicação web (Frontend)](#frontend)
-      * [Database](#database)
-   * [Tecnologias](#tecnologias)
-      * [Web system](#web-system)
-      * [Server](#server)
-   * [Como contribuir para o projeto](#como-contribuir-para-o-projeto)
-   * [Licença](#licenc-a)
+   * [Como executar o projeto](#-como-executar-o-projeto)
+      * [Pré-requisitos](#pré-requisitos)
+      * [Rodando o Backend (servidor)](#-rodando-o-backend-servidor)
+      * [Rodando a aplicação web (Frontend)](#-rodando-a-aplicação-web-frontend)
+      * [Database](#-database)
+   * [Tecnologias](#-tecnologias)
+      * [Web system](#web-system--angular-11----typescript)
+      * [Server](#server--nestjs----typescript)
+   * [Como contribuir para o projeto](#-como-contribuir-para-o-projeto)
+   * [Licença](#-licença)
 <!--te-->
 
 
