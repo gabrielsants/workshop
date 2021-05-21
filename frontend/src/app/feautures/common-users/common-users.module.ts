@@ -10,22 +10,8 @@ import { MaterialModule } from '@app/material.module';
 import { CommonUsersRoutingModule } from './common-routing.module';
 import { ReportCardComponent } from './components/report-card/report-card.component';
 
-
-
 @NgModule({
-  declarations: [
-    ListTmoComponent,
-    ListOperatorWorkshopComponent,
-    ListCatalogComponent,
-    ReportCardComponent
-  ],
-  imports: [
-    CommonModule,
-    TranslateModule,
-    SharedModule,
-    FlexLayoutModule,
-    MaterialModule,
-    CommonUsersRoutingModule
-  ]
+  declarations: [ListTmoComponent, ListOperatorWorkshopComponent, ListCatalogComponent, ReportCardComponent],
+  imports: [CommonModule, TranslateModule, SharedModule, FlexLayoutModule, MaterialModule, CommonUsersRoutingModule],
 })
-export class CommonUsersModule { }
+export class CommonUsersModule {}

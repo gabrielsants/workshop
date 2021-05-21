@@ -11,30 +11,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  imports: [
-    FlexLayoutModule, 
-    MaterialModule, 
-    CommonModule, 
-    TranslateModule
-  ],
-  declarations: [
-    LoaderComponent, 
-    DialogComponent, 
-    DialogHistoricComponent, 
-    NotFoundComponent
-  ],
-  exports: [
-    LoaderComponent, 
-    DialogComponent, 
-    DialogHistoricComponent,
-    NotFoundComponent,
-  ],
-  entryComponents: [
-    DialogComponent, 
-    DialogHistoricComponent
-  ],
-  providers: [
-    DialogService
-  ],
+  imports: [FlexLayoutModule, MaterialModule, CommonModule, TranslateModule],
+  declarations: [LoaderComponent, DialogComponent, DialogHistoricComponent, NotFoundComponent],
+  exports: [LoaderComponent, DialogComponent, DialogHistoricComponent, NotFoundComponent],
+  entryComponents: [DialogComponent, DialogHistoricComponent],
+  providers: [DialogService],
 })
 export class SharedModule {}

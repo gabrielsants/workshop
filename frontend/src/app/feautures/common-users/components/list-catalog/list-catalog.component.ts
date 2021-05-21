@@ -8,10 +8,9 @@ import { File } from '@app/feautures/common/models/file.model';
 @Component({
   selector: 'app-list-catalog',
   templateUrl: './list-catalog.component.html',
-  styleUrls: ['./list-catalog.component.scss']
+  styleUrls: ['./list-catalog.component.scss'],
 })
 export class ListCatalogComponent implements AfterViewInit {
-
   constructor(private fileService: FileService, public router: Router) {
     this.loadData();
   }
@@ -49,8 +48,8 @@ export class ListCatalogComponent implements AfterViewInit {
   viewFile(filename: string) {
     this.router.navigate(['/list-files/view'], {
       state: {
-        data: filename 
-      }
+        data: filename,
+      },
     });
   }
 
@@ -62,5 +61,4 @@ export class ListCatalogComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
 }

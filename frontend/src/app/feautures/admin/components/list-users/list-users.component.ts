@@ -18,9 +18,9 @@ export class ListUsersComponent implements AfterViewInit {
     this.init();
   }
 
-  displayedColumns: string[] = ['id', 'full_name','department', 'isActive', '*'];
+  displayedColumns: string[] = ['id', 'full_name', 'department', 'isActive', '*'];
   dataSource = new MatTableDataSource<User>();
-  
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 

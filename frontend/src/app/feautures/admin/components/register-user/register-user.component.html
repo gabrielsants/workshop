@@ -26,7 +26,7 @@
                   placeholder="Ex. anakin.skywalker@volmaq.com.br"
                 />
                 <mat-error *ngIf="userForm.hasError('email') && !userForm.hasError('required')">
-                  {{'Please enter a valid email address' | translate}}
+                  {{ 'Please enter a valid email address' | translate }}
                 </mat-error>
                 <mat-error *ngIf="userForm.hasError('required')"> Email is <strong>required</strong> </mat-error>
               </mat-form-field>
@@ -42,24 +42,24 @@
                   required
                 />
                 <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility_off' : 'visibility' }} </mat-icon>
-                <mat-hint *ngIf="!userForm.controls['password'].value">{{'Enter an password' | translate}}</mat-hint>
+                <mat-hint *ngIf="!userForm.controls['password'].value">{{ 'Enter an password' | translate }}</mat-hint>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
-              <strong>{{'Select a role' | translate}}</strong>
+              <strong>{{ 'Select a role' | translate }}</strong>
               <mat-form-field appearance="fill">
-                <mat-label>{{'Select a option' | translate}}</mat-label>
+                <mat-label>{{ 'Select a option' | translate }}</mat-label>
                 <mat-select formControlName="role">
                   <mat-option *ngFor="let role of roles" [value]="role">{{ role.name }}</mat-option>
                 </mat-select>
               </mat-form-field>
             </td>
             <td>
-              <strong>{{'Select a department' | translate}}</strong>
+              <strong>{{ 'Select a department' | translate }}</strong>
               <mat-form-field appearance="fill">
-                <mat-label>{{'Select a department' | translate}}</mat-label>
+                <mat-label>{{ 'Select a department' | translate }}</mat-label>
                 <mat-select formControlName="department">
                   <mat-option *ngFor="let department of departments" [value]="department">{{
                     department.name

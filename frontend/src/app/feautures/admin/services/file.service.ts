@@ -29,7 +29,7 @@ export class FileService {
   public getFilesTMO(): Observable<any> {
     return this.httpClient.get(environment.server.concat('file/getTMOs')).pipe(retry(1));
   }
-  
+
   public getReportCards(): Observable<any> {
     return this.httpClient.get(environment.server.concat('file/getReportCards')).pipe(retry(1));
   }

@@ -48,7 +48,9 @@ export class UserService {
   }
 
   public saveDepartment(department: Department): Observable<any> {
-    return this.httpClient.post(this.endpoint + 'departments/save', department, { responseType: 'text' }).pipe(retry(1));
+    return this.httpClient
+      .post(this.endpoint + 'departments/save', department, { responseType: 'text' })
+      .pipe(retry(1));
   }
 
   public updateDepartment(department: Department): Observable<any> {

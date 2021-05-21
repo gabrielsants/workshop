@@ -9,10 +9,9 @@ import { File } from '@app/feautures/common/models/file.model';
 @Component({
   selector: 'app-list-tmo',
   templateUrl: './list-tmo.component.html',
-  styleUrls: ['./list-tmo.component.scss']
+  styleUrls: ['./list-tmo.component.scss'],
 })
 export class ListTmoComponent implements AfterViewInit {
-
   constructor(private fileService: FileService, public router: Router) {
     this.loadData();
   }
@@ -50,8 +49,8 @@ export class ListTmoComponent implements AfterViewInit {
   viewFile(filename: string) {
     this.router.navigate(['/list-files/view'], {
       state: {
-        data: filename 
-      }
+        data: filename,
+      },
     });
   }
 
@@ -63,5 +62,4 @@ export class ListTmoComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
 }

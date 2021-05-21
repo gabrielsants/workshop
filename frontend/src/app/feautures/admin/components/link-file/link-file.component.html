@@ -14,13 +14,13 @@
 
           <!-- filename Column -->
           <ng-container matColumnDef="filename">
-            <th mat-header-cell *matHeaderCellDef>{{'Filename' | translate}}</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'Filename' | translate }}</th>
             <td mat-cell *matCellDef="let element">{{ element.filename }}</td>
           </ng-container>
 
           <!-- productModel -->
           <ng-container matColumnDef="productModel">
-            <th mat-header-cell *matHeaderCellDef>{{'Product Model' | translate}}</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'Product Model' | translate }}</th>
             <td mat-cell *matCellDef="let element">{{ element.productModel?.name }}</td>
           </ng-container>
 

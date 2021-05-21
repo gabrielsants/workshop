@@ -20,7 +20,7 @@ export class ListProductModelComponent implements AfterViewInit {
     private productService: ProductService,
     public dialog: MatDialog,
     private dialogService: DialogService,
-    private dialogHService: DialogHistoricService, 
+    private dialogHService: DialogHistoricService,
     private _snackBar: MatSnackBar
   ) {
     this.init();

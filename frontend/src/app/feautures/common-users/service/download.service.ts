@@ -4,7 +4,7 @@ import { AppHttpClient } from '@app/app.component';
 import { environment } from '@env/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DownloadService {
   endpoint = environment.server;

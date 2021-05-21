@@ -10,11 +10,10 @@ import { DownloadService } from '../../service/download.service';
 @Component({
   selector: 'app-report-card',
   templateUrl: './report-card.component.html',
-  styleUrls: ['./report-card.component.scss']
+  styleUrls: ['./report-card.component.scss'],
 })
 export class ReportCardComponent implements AfterViewInit {
-
-  constructor(private fileService: FileService, public router: Router, private dowloadService : DownloadService) {
+  constructor(private fileService: FileService, public router: Router, private dowloadService: DownloadService) {
     this.loadData();
   }
 
@@ -51,8 +50,8 @@ export class ReportCardComponent implements AfterViewInit {
   viewFile(filename: string) {
     this.router.navigate(['/list-files/view'], {
       state: {
-        data: filename 
-      }
+        data: filename,
+      },
     });
   }
 
@@ -65,15 +64,14 @@ export class ReportCardComponent implements AfterViewInit {
     }
   }
 
-  download(filename : string) {
-    this.dowloadService.downloadFile(filename).subscribe(res => {
-      let blob = new Blob([res], {type: 'application/pdf'});
+  download(filename: string) {
+    this.dowloadService.downloadFile(filename).subscribe((res) => {
+      let blob = new Blob([res], { type: 'application/pdf' });
       let downloadURL = window.URL.createObjectURL(res);
       var link = document.createElement('a');
       link.href = downloadURL;
       link.download = `${filename}`;
       link.click();
-    })
+    });
   }
-  
 }

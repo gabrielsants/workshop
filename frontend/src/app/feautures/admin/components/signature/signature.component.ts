@@ -5,27 +5,28 @@ import { ErrorStateMatcher } from '@angular/material/core';
 @Component({
   selector: 'app-signature',
   templateUrl: './signature.component.html',
-  styleUrls: ['./signature.component.scss']
+  styleUrls: ['./signature.component.scss'],
 })
 export class SignatureComponent {
-
-  constructor(private formBuilder: FormBuilder) { this.init(); }
+  constructor(private formBuilder: FormBuilder) {
+    this.init();
+  }
 
   matcher = new CustomErrorStateMatcher();
   signatureForm: FormGroup;
   signature: Signature = null;
   isVisible = false;
 
-  addressList : Address[] = [
-    {value : 'Av. Antonio Carlos Paniago, 15', cep : 'CEP 75830-000 - Mineiros / GO '},
-    {value : 'Av. Cel. Macario S. de Oliveira, 1093', cep : 'CEP 78785-000 - Alto Taquari / MT '},
-    {value : 'Av. Said Abdalla, 350', cep : 'CEP 75800-000 - Jatai / GO'},
+  addressList: Address[] = [
+    { value: 'Av. Antonio Carlos Paniago, 15', cep: 'CEP 75830-000 - Mineiros / GO ' },
+    { value: 'Av. Cel. Macario S. de Oliveira, 1093', cep: 'CEP 78785-000 - Alto Taquari / MT ' },
+    { value: 'Av. Said Abdalla, 350', cep: 'CEP 75800-000 - Jatai / GO' },
   ];
 
   generate() {
     this.isVisible = true;
     this.signature = this.signatureForm.value;
-    console.log(this.signature)
+    console.log(this.signature);
   }
 
   private init() {
@@ -37,13 +38,12 @@ export class SignatureComponent {
       email: ['', Validators.email],
       dealership: [''],
       address: ['', Validators.required],
-      site: ['']
+      site: [''],
     });
 
     this.signatureForm.controls['dealership'].setValue('Volmaq');
     this.signatureForm.controls['site'].setValue('volmaq.com.br');
   }
-
 }
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -55,10 +55,9 @@ export class CustomErrorStateMatcher implements ErrorStateMatcher {
 }
 
 export interface Address {
-  value : string;
-  cep : string;
+  value: string;
+  cep: string;
 }
-
 
 export interface Signature {
   full_name: string;

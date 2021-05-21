@@ -9,10 +9,9 @@ import { File } from '@app/feautures/common/models/file.model';
 @Component({
   selector: 'app-list-operator-workshop',
   templateUrl: './list-operator-workshop.component.html',
-  styleUrls: ['./list-operator-workshop.component.scss']
+  styleUrls: ['./list-operator-workshop.component.scss'],
 })
 export class ListOperatorWorkshopComponent implements AfterViewInit {
-
   constructor(private fileService: FileService, public router: Router) {
     this.loadData();
   }
@@ -50,8 +49,8 @@ export class ListOperatorWorkshopComponent implements AfterViewInit {
   viewFile(filename: string) {
     this.router.navigate(['/list-files/view'], {
       state: {
-        data: filename 
-      }
+        data: filename,
+      },
     });
   }
 
@@ -63,5 +62,4 @@ export class ListOperatorWorkshopComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
 }

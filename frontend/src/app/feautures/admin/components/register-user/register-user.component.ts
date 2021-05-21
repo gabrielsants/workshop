@@ -14,7 +14,6 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./register-user.component.scss'],
 })
 export class RegisterUserComponent {
-
   constructor(private formBuilder: FormBuilder, private userService: UserService, private _snackBar: MatSnackBar) {
     this.init();
   }
@@ -27,7 +26,7 @@ export class RegisterUserComponent {
   hide: boolean = true;
   roles: Role[] = [];
   departments: Department[] = [];
-  
+
   private async init() {
     this.userForm = this.formBuilder.group({
       email: ['', Validators.email],

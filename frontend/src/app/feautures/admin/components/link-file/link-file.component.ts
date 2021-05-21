@@ -22,10 +22,10 @@ export class LinkFileComponent implements AfterViewInit {
   }
 
   kinds = [
-    {id: 0, viewValue: 'TMO'},
-    {id: 1, viewValue: 'OPERATOR'},
-    {id: 2, viewValue: 'CATALOG'},
-    {id: 3, viewValue: 'REPORT CARD'}
+    { id: 0, viewValue: 'TMO' },
+    { id: 1, viewValue: 'OPERATOR' },
+    { id: 2, viewValue: 'CATALOG' },
+    { id: 3, viewValue: 'REPORT CARD' },
   ];
 
   public file: File;
@@ -64,14 +64,14 @@ export class LinkFileComponent implements AfterViewInit {
     });
   }
 
-  getKind(rowId : number) {
-    this.kinds.forEach(element => {
-      if(element.id == rowId){
+  getKind(rowId: number) {
+    this.kinds.forEach((element) => {
+      if (element.id == rowId) {
         return element.viewValue;
       }
     });
   }
-  
+
   reload() {
     this.init();
   }
@@ -82,10 +82,7 @@ export class LinkFileComponent implements AfterViewInit {
   templateUrl: './templates/edit-file.html',
 })
 export class DialogEdit {
-  constructor(
-    public dialogRef: MatDialogRef<DialogEdit>, 
-    @Inject(MAT_DIALOG_DATA) public data: File) {
-  }
+  constructor(public dialogRef: MatDialogRef<DialogEdit>, @Inject(MAT_DIALOG_DATA) public data: File) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -116,10 +113,10 @@ export class DialogLink {
   disabled: boolean = true;
 
   kinds = [
-    {id: 0, viewValue: 'TMO'},
-    {id: 1, viewValue: 'OPERATOR'},
-    {id: 2, viewValue: 'CATALOG'},
-    {id: 3, viewValue: 'REPORT CARD'}
+    { id: 0, viewValue: 'TMO' },
+    { id: 1, viewValue: 'OPERATOR' },
+    { id: 2, viewValue: 'CATALOG' },
+    { id: 3, viewValue: 'REPORT CARD' },
   ];
 
   setProduct(product: Product): void {
@@ -131,7 +128,7 @@ export class DialogLink {
     this.productLineSelected = pLine;
   }
 
-  setFileKind(value : number) {
+  setFileKind(value: number) {
     this.file.kind = value;
   }
 

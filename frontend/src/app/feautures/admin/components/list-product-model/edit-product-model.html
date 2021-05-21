@@ -1,12 +1,12 @@
 <div class="container">
-  <mat-form-field style="width: 100%;">
+  <mat-form-field style="width: 100%">
     <mat-label translate>{{"Name" | translate}}</mat-label>
     <input matInput #message maxlength="45" placeholder="Momentum ..." [value]="data.name" />
     <mat-hint align="start"><strong translate>Ex: MF 4200, MF 1200 ...</strong> </mat-hint>
     <mat-hint align="end">{{ message.value.length }} / 90</mat-hint>
   </mat-form-field>
 
-  <br><br>
+  <br /><br />
 
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <button mat-raised-button (click)="close()">{{"Close" | translate}}</button>&nbsp;

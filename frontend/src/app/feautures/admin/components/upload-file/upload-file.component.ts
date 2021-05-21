@@ -24,7 +24,7 @@ export class UploadFileComponent implements OnInit {
   linkFile: boolean = false;
   isLoading = false;
 
-  constructor(private uploadService: UploadService) { }
+  constructor(private uploadService: UploadService) {}
 
   ngOnInit() {}
 

@@ -9,23 +9,31 @@ import { ClerkGuard } from './guard/clerk.guard';
 import { MechanicGuard } from './guard/mechanic.guard';
 
 const routes: Routes = [
-  // Module is lazy loaded, see app-routing.module.ts  
-  { 
-    path: 'list-tmo', component: ListTmoComponent,
-    data: { title: marker('List TMO') }, canActivate : [MechanicGuard] 
+  // Module is lazy loaded, see app-routing.module.ts
+  {
+    path: 'list-tmo',
+    component: ListTmoComponent,
+    data: { title: marker('List TMO') },
+    canActivate: [MechanicGuard],
   },
-  { 
-    path: 'list-operator-workshop', component: ListOperatorWorkshopComponent,
-    data: { title: marker('List Operator/Workshop') }, canActivate : [MechanicGuard] 
+  {
+    path: 'list-operator-workshop',
+    component: ListOperatorWorkshopComponent,
+    data: { title: marker('List Operator/Workshop') },
+    canActivate: [MechanicGuard],
   },
-  { 
-    path: 'list-catalog', component: ListCatalogComponent, 
-    data: { title: marker('List Catalog') }, canActivate : [ClerkGuard] 
+  {
+    path: 'list-catalog',
+    component: ListCatalogComponent,
+    data: { title: marker('List Catalog') },
+    canActivate: [ClerkGuard],
   },
-  
-  { 
-    path : 'report-card', component : ReportCardComponent,
-    data : { title: marker('Report card') }, canActivate: [MechanicGuard] 
+
+  {
+    path: 'report-card',
+    component: ReportCardComponent,
+    data: { title: marker('Report card') },
+    canActivate: [MechanicGuard],
   },
 ];
 

@@ -8,9 +8,8 @@ describe('ListOperatorWorkshopComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListOperatorWorkshopComponent ]
-    })
-    .compileComponents();
+      declarations: [ListOperatorWorkshopComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

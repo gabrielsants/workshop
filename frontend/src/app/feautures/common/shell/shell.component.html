@@ -1,7 +1,12 @@
 <div fxFlex>
   <mat-sidenav-container fxFill>
-    <mat-sidenav #sidenav [mode]="isMobile ? 'over' : 'side'" [opened]="!isMobile" [disableClose]="!isMobile"
-      ngClass.gt-sm="has-border">
+    <mat-sidenav
+      #sidenav
+      [mode]="isMobile ? 'over' : 'side'"
+      [opened]="!isMobile"
+      [disableClose]="!isMobile"
+      ngClass.gt-sm="has-border"
+    >
       <mat-toolbar color="primary">
         <span translate>APP_NAME</span>
         <div fxFlex></div>
@@ -26,7 +31,6 @@
 
       <nav>
         <mat-list>
-
           <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="isMobile && sidenav.close()">
             <mat-icon>roofing</mat-icon><span translate>&nbsp;Home</span>
           </a>
@@ -35,23 +39,23 @@
           <!-- MECHANIC AREA -->
           <div *ngIf="isMechanic()">
             <button mat-button [matMenuTriggerFor]="mechanic" class="block">
-              <mat-icon>topic</mat-icon>&nbsp;{{'View files' | translate}}
+              <mat-icon>topic</mat-icon>&nbsp;{{ 'View files' | translate }}
             </button>
             <mat-menu #mechanic="matMenu">
               <button mat-menu-item [matMenuTriggerFor]="mechanicoptions">
-                <mat-icon>engineering</mat-icon>&nbsp;{{'Manuals' | translate}}
+                <mat-icon>engineering</mat-icon>&nbsp;{{ 'Manuals' | translate }}
               </button>
             </mat-menu>
 
             <mat-menu #mechanicoptions="matMenu">
               <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/list-tmo">
-                <mat-icon>hail</mat-icon>&nbsp;{{'TMO' | translate}}
+                <mat-icon>hail</mat-icon>&nbsp;{{ 'TMO' | translate }}
               </button>
               <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/list-operator-workshop">
-                <mat-icon>home_repair_service</mat-icon>&nbsp;{{'Operator/Workshop' | translate}}
+                <mat-icon>home_repair_service</mat-icon>&nbsp;{{ 'Operator/Workshop' | translate }}
               </button>
               <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/report-card">
-                <mat-icon>description</mat-icon>&nbsp;{{'Report card' | translate}}
+                <mat-icon>description</mat-icon>&nbsp;{{ 'Report card' | translate }}
               </button>
             </mat-menu>
             <mat-divider></mat-divider>
@@ -61,11 +65,11 @@
           <!-- CLERK AREA -->
           <div *ngIf="isClerk()">
             <button mat-button [matMenuTriggerFor]="mechanic" class="block">
-              <mat-icon>topic</mat-icon>&nbsp;{{'View files' | translate}}
+              <mat-icon>topic</mat-icon>&nbsp;{{ 'View files' | translate }}
             </button>
             <mat-menu #mechanic="matMenu">
               <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/list-catalog">
-                <mat-icon>auto_awesome_motion</mat-icon>&nbsp;{{'Catalog' | translate}}
+                <mat-icon>auto_awesome_motion</mat-icon>&nbsp;{{ 'Catalog' | translate }}
               </button>
             </mat-menu>
             <mat-divider></mat-divider>
@@ -74,29 +78,28 @@
 
           <!-- ADMIN AREA -->
           <div *ngIf="isAdmin()">
-
             <button mat-button [matMenuTriggerFor]="mechanic" class="block">
-              <mat-icon>topic</mat-icon>&nbsp;{{'View files' | translate}}
+              <mat-icon>topic</mat-icon>&nbsp;{{ 'View files' | translate }}
             </button>
             <mat-menu #mechanic="matMenu">
               <button mat-menu-item [matMenuTriggerFor]="admptions">
-                <mat-icon>engineering</mat-icon>&nbsp;{{'Manuals' | translate}}
+                <mat-icon>engineering</mat-icon>&nbsp;{{ 'Manuals' | translate }}
               </button>
               <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/list-catalog">
-                <mat-icon>auto_awesome_motion</mat-icon>&nbsp;{{'Catalog' | translate}}
+                <mat-icon>auto_awesome_motion</mat-icon>&nbsp;{{ 'Catalog' | translate }}
               </button>
             </mat-menu>
             <mat-divider></mat-divider>
 
             <mat-menu #admptions="matMenu">
               <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/list-tmo">
-                <mat-icon>hail</mat-icon>&nbsp;{{'TMO' | translate}}
+                <mat-icon>hail</mat-icon>&nbsp;{{ 'TMO' | translate }}
               </button>
               <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/list-operator-workshop">
-                <mat-icon>home_repair_service</mat-icon>&nbsp;{{'Operator/Workshop' | translate}}
+                <mat-icon>home_repair_service</mat-icon>&nbsp;{{ 'Operator/Workshop' | translate }}
               </button>
               <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/report-card">
-                <mat-icon>description</mat-icon>&nbsp;{{'Report card' | translate}}
+                <mat-icon>description</mat-icon>&nbsp;{{ 'Report card' | translate }}
               </button>
             </mat-menu>
 
@@ -165,8 +168,12 @@
             </mat-menu>
             <mat-divider></mat-divider>
 
-            <a mat-list-item routerLink="/admin/signature" routerLinkActive="active"
-              (click)="isMobile && sidenav.close()">
+            <a
+              mat-list-item
+              routerLink="/admin/signature"
+              routerLinkActive="active"
+              (click)="isMobile && sidenav.close()"
+            >
               <mat-icon>gesture</mat-icon><span translate>&nbsp;Signature</span>
             </a>
             <mat-divider></mat-divider>

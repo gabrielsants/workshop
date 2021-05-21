@@ -10,7 +10,11 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./register-product.component.scss'],
 })
 export class RegisterProductComponent {
-  constructor(private formBuilder: FormBuilder, private productService: ProductService, private _snackBar: MatSnackBar) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private productService: ProductService,
+    private _snackBar: MatSnackBar
+  ) {
     this.productForm = formBuilder.group({
       name: ['', Validators.required],
     });

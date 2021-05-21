@@ -8,9 +8,8 @@ describe('ListTmoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListTmoComponent ]
-    })
-    .compileComponents();
+      declarations: [ListTmoComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

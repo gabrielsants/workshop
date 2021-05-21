@@ -66,7 +66,7 @@ export class EditProduct {
     private _snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<Product>,
     @Inject(MAT_DIALOG_DATA) public data: Product
-  ) { }
+  ) {}
 
   onNoClick(): void {
     this.dialogRef.close();

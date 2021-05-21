@@ -4,5 +4,5 @@ export interface File {
   id: number;
   filename: string;
   productModel: ProductModel;
-  kind : number;
+  kind: number;
 }
