@@ -22,7 +22,8 @@ export class FileController {
     private historicService: FileHistoricService,
   ) {}
 
-  @Get(':filename')
+  @UseGuards(JwtAuthGuard)
+  @Get('getFile/:filename')
   getFile(@Param('filename') filename: string, @Res() res) {
     return res.sendFile(filename, { root: './files' });
   }

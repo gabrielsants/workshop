@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  Param,
   Post,
   Put,
   Request,
@@ -14,7 +15,7 @@ import { ProductModel } from '../../models/product-model.entity';
 import { ProductHistoricService } from '../../services/product-historic/product-historic.service';
 import { ProductLineService } from '../../services/product-model/product-line.service';
 
-@Controller('product-line')
+@Controller('api/product-line')
 export class ProductLineController {
   constructor(
     private userService: UsersService,
@@ -67,8 +68,8 @@ export class ProductLineController {
   }
 
   @UseGuards(JwtAuthGuard)
-  @Get('historic')
-  async getHistoric(): Promise<ProductHistoric[]> {
-    return this.productLineHistoric.getHistoricsWithRelations();
+  @Get('historic/:id')
+  async getHistoric(@Param('id') id: number): Promise<ProductHistoric[]> {
+    return this.productLineHistoric.getHistoricsWithRelations(id);
   }
 }

@@ -51,6 +51,7 @@ export class FileUploadController {
 
     historic.file = _file;
     historic.modifiedIn = new Date(Date.now());
+    historic.message = 'CREATED';
     historic.user = user;
 
     this.historicService.save(historic);

@@ -33,6 +33,10 @@ export class ShellComponent implements OnInit {
     return localStorage.getItem('role') == '3' ? true : false;
   }
 
+  isStockist() {
+    return localStorage.getItem('role') == '4' ? true : false;
+  }
+
   logout() {
     this.authenticationService.logout().subscribe(() => this.router.navigate(['/login'], { replaceUrl: true }));
   }

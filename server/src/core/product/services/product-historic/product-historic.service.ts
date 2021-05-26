@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { getRepository, Repository } from 'typeorm';
 import { ProductHistoric } from '../../models/product-historic.entity';
 
 @Injectable()
@@ -22,9 +22,12 @@ export class ProductHistoricService {
     await this.productHRepository.delete(id);
   }
 
-  async getHistoricsWithRelations(): Promise<ProductHistoric[]> {
-    return await this.productHRepository.find({
-      relations: ['user', 'productModel'],
+  async getHistoricsWithRelations(id: number): Promise<ProductHistoric[]> {
+    return this.productHRepository.find({
+      relations: ['productModel', 'user'],
+      where: {
+        productModel: id,
+      },
     });
   }
 

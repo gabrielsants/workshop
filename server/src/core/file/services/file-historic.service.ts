@@ -25,4 +25,13 @@ export class FileHistoricService {
   async save(fileHistoric: FileHistoric): Promise<void> {
     await this.fileHRepository.save(fileHistoric);
   }
+
+  async getHistoricsWithRelations(id: number): Promise<FileHistoric[]> {
+    return this.fileHRepository.find({
+      relations: ['file', 'user'],
+      where: {
+        productModel: id,
+      },
+    });
+  }
 }

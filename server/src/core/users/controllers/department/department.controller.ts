@@ -3,7 +3,7 @@ import { JwtAuthGuard } from 'src/core/auth/guards/jwt-auth.guard';
 import { Department } from '../../models/department.entity';
 import { DepartmentsService } from '../../services/departments/departments.service';
 
-@Controller('department')
+@Controller('api/departments')
 export class DepartmentController {
   constructor(private departmentService: DepartmentsService) {}
 

@@ -4,7 +4,7 @@ import { Product } from '../../models/product.entity';
 import { ProductLineService } from '../../services/product-model/product-line.service';
 import { ProductService } from '../../services/product/product.service';
 
-@Controller('product')
+@Controller('api/product')
 export class ProductController {
   constructor(
     private productLService: ProductLineService,
