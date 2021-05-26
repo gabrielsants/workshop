@@ -22,6 +22,9 @@ export class User {
   @Column()
   full_name: string;
 
+  @Column()
+  isActive: boolean;
+
   @OneToOne(() => Role)
   @JoinColumn({ name: 'role_id' })
   role: Role;

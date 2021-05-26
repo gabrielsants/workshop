@@ -3,7 +3,7 @@ import { JwtAuthGuard } from 'src/core/auth/guards/jwt-auth.guard';
 import { User } from '../../models/user.entity';
 import { UsersService } from '../../services/users/users.service';
 
-@Controller('users')
+@Controller('api/users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
@@ -16,8 +16,9 @@ export class UsersController {
   @UseGuards(JwtAuthGuard)
   @Post('save')
   async save(@Body() user: User): Promise<string> {
+    user.isActive = true;
     user = await this.usersService.save(user);
-    return `O usuário #${user.full_name} foi salvo com sucesso!`;
+    return `O usuário #{${user.full_name}} foi salvo com sucesso!`;
   }
 
   @UseGuards(JwtAuthGuard)
