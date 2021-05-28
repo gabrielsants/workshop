@@ -1,6 +1,6 @@
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ProductModel } from '@app/feautures/common/models/product-model.model';
+import { ProductModel } from '@app/feautures/common-views/models/product-model.model';
 
 @Component({
   selector: 'app-dialog-historic',

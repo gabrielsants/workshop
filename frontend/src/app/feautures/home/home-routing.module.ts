@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
-import { Shell } from '../common/shell/service/shell.service';
+import { Shell } from '../common-views/shell/service/shell.service';
 
 import { HomeComponent } from './home.component';
 

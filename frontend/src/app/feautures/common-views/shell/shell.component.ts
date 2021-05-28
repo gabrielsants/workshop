@@ -22,19 +22,19 @@ export class ShellComponent implements OnInit {
   ngOnInit() {}
 
   isAdmin() {
-    return localStorage.getItem('role') == '1' ? true : false;
+    return localStorage.getItem('role') == '1' || localStorage.getItem('role') == '1' ? true : false;
   }
 
   isMechanic() {
-    return localStorage.getItem('role') == '2' ? true : false;
+    return localStorage.getItem('role') == '2' || localStorage.getItem('role') == '1' ? true : false;
   }
 
   isClerk() {
-    return localStorage.getItem('role') == '3' ? true : false;
+    return localStorage.getItem('role') == '3' || localStorage.getItem('role') == '1' ? true : false;
   }
 
   isStockist() {
-    return localStorage.getItem('role') == '4' ? true : false;
+    return localStorage.getItem('role') == '4' || localStorage.getItem('role') == '1' ? true : false;
   }
 
   logout() {

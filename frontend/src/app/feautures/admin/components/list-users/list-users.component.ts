@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { User } from '@app/feautures/common/models/user.model';
+import { User } from '@app/feautures/common-views/models/user.model';
 import { DialogService } from '@app/shared/service/dialog.service';
 import { of } from 'rxjs';
 import { UserService } from '../../services/user.service';

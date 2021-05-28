@@ -12,7 +12,7 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { AuthModule } from './feautures/auth';
 import { HomeModule } from './feautures/home/home.module';
-import { ShellModule } from './feautures/common/shell/shell.module';
+import { ShellModule } from './feautures/common-views/shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { JwtModule } from '@auth0/angular-jwt';

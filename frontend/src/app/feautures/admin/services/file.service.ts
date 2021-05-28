@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppHttpClient } from '@app/app.component';
-import { File } from '@app/feautures/common/models/file.model';
+import { File } from '@app/feautures/common-views/models/file.model';
 import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';

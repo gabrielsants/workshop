@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Department } from '@app/feautures/common/models/department.model';
+import { Department } from '@app/feautures/common-views/models/department.model';
 import { UserService } from '../../services/user.service';
 
 @Component({

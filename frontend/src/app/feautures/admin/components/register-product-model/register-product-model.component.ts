@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ProductModel } from '@app/feautures/common/models/product-model.model';
-import { Product } from '@app/feautures/common/models/product.model';
+import { ProductModel } from '@app/feautures/common-views/models/product-model.model';
+import { Product } from '@app/feautures/common-views/models/product.model';
 import { ProductService } from '../../services/product.service';
 
 @Component({

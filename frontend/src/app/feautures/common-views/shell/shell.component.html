@@ -39,7 +39,7 @@
           <!-- MECHANIC AREA -->
           <div *ngIf="isMechanic()">
             <button mat-button [matMenuTriggerFor]="mechanic" class="block">
-              <mat-icon>topic</mat-icon>&nbsp;{{ 'View files' | translate }}
+              <mat-icon> panorama_photosphere_select</mat-icon>&nbsp;{{ 'Workshop' | translate }}
             </button>
             <mat-menu #mechanic="matMenu">
               <button mat-menu-item [matMenuTriggerFor]="mechanicoptions">
@@ -64,45 +64,40 @@
 
           <!-- CLERK AREA -->
           <div *ngIf="isClerk()">
-            <button mat-button [matMenuTriggerFor]="mechanic" class="block">
-              <mat-icon>topic</mat-icon>&nbsp;{{ 'View files' | translate }}
-            </button>
-            <mat-menu #mechanic="matMenu">
-              <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/list-catalog">
-                <mat-icon>auto_awesome_motion</mat-icon>&nbsp;{{ 'Catalog' | translate }}
-              </button>
-            </mat-menu>
+            <a
+              mat-list-item
+              routerLink="/common/list-catalog"
+              routerLinkActive="active"
+              (click)="isMobile && sidenav.close()"
+            >
+              <mat-icon>auto_awesome_motion</mat-icon><span translate>&nbsp;{{ 'Catalog' | translate }}</span>
+            </a>
             <mat-divider></mat-divider>
           </div>
           <!-- END CLERK AREA -->
 
-          <!-- ADMIN AREA -->
-          <div *ngIf="isAdmin()">
-            <button mat-button [matMenuTriggerFor]="mechanic" class="block">
-              <mat-icon>topic</mat-icon>&nbsp;{{ 'View files' | translate }}
+          <!-- STOCKIST AREA -->
+          <div *ngIf="isStockist()">
+            <button mat-button [matMenuTriggerFor]="stockist" class="block">
+              <mat-icon>settings</mat-icon>&nbsp;{{ 'Parts' | translate }}
             </button>
-            <mat-menu #mechanic="matMenu">
-              <button mat-menu-item [matMenuTriggerFor]="admptions">
-                <mat-icon>engineering</mat-icon>&nbsp;{{ 'Manuals' | translate }}
+            <mat-menu #stockist="matMenu">
+              <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/stockist/register-parts">
+                <mat-icon>add</mat-icon>&nbsp;{{ 'Register' | translate }}
               </button>
-              <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/list-catalog">
-                <mat-icon>auto_awesome_motion</mat-icon>&nbsp;{{ 'Catalog' | translate }}
+              <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/stockist/list-parts">
+                <mat-icon>visibility</mat-icon><span translate>&nbsp;View</span>
+              </button>
+              <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/stockist/entrance-and-exit">
+                <mat-icon>meeting_room</mat-icon><span translate>&nbsp;Entrance and exit</span>
               </button>
             </mat-menu>
             <mat-divider></mat-divider>
+          </div>
+          <!-- END STOCKIST AREA -->
 
-            <mat-menu #admptions="matMenu">
-              <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/list-tmo">
-                <mat-icon>hail</mat-icon>&nbsp;{{ 'TMO' | translate }}
-              </button>
-              <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/list-operator-workshop">
-                <mat-icon>home_repair_service</mat-icon>&nbsp;{{ 'Operator/Workshop' | translate }}
-              </button>
-              <button mat-menu-item (click)="isMobile && sidenav.close()" routerLink="/common/report-card">
-                <mat-icon>description</mat-icon>&nbsp;{{ 'Report card' | translate }}
-              </button>
-            </mat-menu>
-
+          <!-- ADMIN AREA -->
+          <div *ngIf="isAdmin()">
             <button mat-button [matMenuTriggerFor]="menuFile" class="block">
               <mat-icon>picture_as_pdf</mat-icon><span translate>&nbsp;File</span>
             </button>

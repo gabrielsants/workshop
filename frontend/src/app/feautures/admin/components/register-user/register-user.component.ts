@@ -3,9 +3,9 @@ import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Valida
 import { ErrorStateMatcher } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Department } from '@app/feautures/common/models/department.model';
-import { Role } from '@app/feautures/common/models/role.model';
-import { User } from '@app/feautures/common/models/user.model';
+import { Department } from '@app/feautures/common-views/models/department.model';
+import { Role } from '@app/feautures/common-views/models/role.model';
+import { User } from '@app/feautures/common-views/models/user.model';
 import { UserService } from '../../services/user.service';
 
 @Component({

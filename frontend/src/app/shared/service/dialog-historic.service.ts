@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ProductModel } from '@app/feautures/common/models/product-model.model';
+import { ProductModel } from '@app/feautures/common-views/models/product-model.model';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { DialogHistoricComponent } from '../dialog-historic/dialog-historic.component';

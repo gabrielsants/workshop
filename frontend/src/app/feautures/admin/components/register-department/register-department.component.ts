@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Department } from '@app/feautures/common/models/department.model';
+import { Department } from '@app/feautures/common-views/models/department.model';
 import { ProductService } from '../../services/product.service';
 import { UserService } from '../../services/user.service';
 

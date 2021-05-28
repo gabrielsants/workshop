@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { FileService } from '@app/feautures/admin/services/file.service';
-import { File } from '@app/feautures/common/models/file.model';
+import { File } from '@app/feautures/common-views/models/file.model';
 import { DownloadService } from '../../service/download.service';
 
 @Component({

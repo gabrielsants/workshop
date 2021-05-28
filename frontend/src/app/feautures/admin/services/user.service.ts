@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppHttpClient } from '@app/app.component';
-import { Department } from '@app/feautures/common/models/department.model';
-import { Role } from '@app/feautures/common/models/role.model';
-import { User } from '@app/feautures/common/models/user.model';
+import { Department } from '@app/feautures/common-views/models/department.model';
+import { Role } from '@app/feautures/common-views/models/role.model';
+import { User } from '@app/feautures/common-views/models/user.model';
 import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
 import { retry } from 'rxjs/operators';

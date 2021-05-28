@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppHttpClient } from '@app/app.component';
-import { ProductModel } from '@app/feautures/common/models/product-model.model';
-import { Product } from '@app/feautures/common/models/product.model';
+import { ProductModel } from '@app/feautures/common-views/models/product-model.model';
+import { Product } from '@app/feautures/common-views/models/product.model';
 import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
 import { retry } from 'rxjs/operators';
