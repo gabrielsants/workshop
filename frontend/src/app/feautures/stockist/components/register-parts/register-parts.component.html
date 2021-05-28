@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title translate>Register Parts</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <form [formGroup]="partsForm">
+          <mat-form-field class="example-full-width">
+            <mat-label>{{ 'Name' | translate }}</mat-label>
+            <input matInput formControlName="name" placeholder="Ex. Name" />
+          </mat-form-field>
+
+          <strong>{{ 'Select a line' | translate }}</strong
+          ><br />
+          <mat-form-field appearance="fill">
+            <mat-label>{{ 'Select a option' | translate }}</mat-label>
+            <mat-select formControlName="productModel">
+              <mat-option *ngFor="let product of productModels" [value]="product">{{ product.name }} </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+
+      <br />
+      <button mat-raised-button color="primary" (click)="submit()">{{ 'Submit' | translate }}</button>
+    </mat-card-content>
+  </mat-card>
+</div>
