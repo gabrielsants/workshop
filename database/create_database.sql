@@ -157,6 +157,48 @@ CREATE TABLE IF NOT EXISTS `workshop`.`productHistoric` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `workshop`.`parts`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `workshop`.`parts` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `productModel_id` INT UNSIGNED NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_parts_productModel1_idx` (`productModel_id` ASC) VISIBLE,
+  CONSTRAINT `fk_parts_productModel1`
+    FOREIGN KEY (`productModel_id`)
+    REFERENCES `workshop`.`productModel` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `workshop`.`partsHistoric`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `workshop`.`partsHistoric` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `modifiedIn` DATE NOT NULL,
+  `message` VARCHAR(45) NOT NULL,
+  `user_id` INT UNSIGNED NOT NULL,
+  `parts_id` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_partsHistoric_user1_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_partsHistoric_parts1_idx` (`parts_id` ASC) VISIBLE,
+  CONSTRAINT `fk_partsHistoric_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `workshop`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_partsHistoric_parts1`
+    FOREIGN KEY (`parts_id`)
+    REFERENCES `workshop`.`parts` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
