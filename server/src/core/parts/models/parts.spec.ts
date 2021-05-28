@@ -1,4 +1,4 @@
-import { Parts } from './parts';
+import { Parts } from './parts.entity';
 
 describe('Parts', () => {
   it('should be defined', () => {

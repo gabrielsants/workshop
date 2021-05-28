@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { PartsHistoric } from '../models/parts-historic';
+import { PartsHistoric } from '../models/parts-historic.entity';
 
 @Injectable()
 export class PartsHistoricService {

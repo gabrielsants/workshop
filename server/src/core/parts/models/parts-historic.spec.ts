@@ -1,4 +1,4 @@
-import { PartsHistoric } from './parts-historic';
+import { PartsHistoric } from './parts-historic.entity';
 
 describe('PartsHistoric', () => {
   it('should be defined', () => {

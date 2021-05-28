@@ -6,7 +6,7 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Parts } from './parts';
+import { Parts } from './parts.entity';
 
 @Entity({ name: 'partsHistoric' })
 export class PartsHistoric {

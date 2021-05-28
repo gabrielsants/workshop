@@ -19,8 +19,8 @@ import {
   imageFileFilter,
 } from 'src/core/file/models/file-upload';
 import { UsersService } from 'src/core/users/services/users/users.service';
-import { Parts } from '../models/parts';
-import { PartsHistoric } from '../models/parts-historic';
+import { Parts } from '../models/parts.entity';
+import { PartsHistoric } from '../models/parts-historic.entity';
 import { PartsHistoricService } from '../services/parts-historic.service';
 import { PartsService } from '../services/parts.service';
 
@@ -33,9 +33,22 @@ export class PartsController {
   ) {}
 
   @UseGuards(JwtAuthGuard)
-  @Get(':imgname')
-  getImage(@Param('imgname') imgname: string, @Res() res) {
+  @Get('getFile:imgname')
+  public async getImage(@Param('imgname') imgname: string, @Res() res) {
     return res.sendFile(imgname, { root: './images' });
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('getAll')
+  public getAll(): Promise<Parts[]> {
+    return this.partsService.findAll();
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('save')
+  async save(@Body() parts: Parts): Promise<string> {
+    parts = await this.partsService.save(parts);
+    return `A ferramenta #${parts.name} foi salva com sucesso!`;
   }
 
   @UseGuards(JwtAuthGuard)
@@ -55,7 +68,7 @@ export class PartsController {
   }
 
   @UseGuards(JwtAuthGuard)
-  @Post('save')
+  @Post('upload')
   @UseInterceptors(
     FileInterceptor('image', {
       storage: diskStorage({
@@ -84,4 +97,8 @@ export class PartsController {
 
     return response;
   }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('historic/:partId')
+  getHistoric(@Param('partId') partId: string) {}
 }
