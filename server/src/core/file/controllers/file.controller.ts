@@ -4,6 +4,7 @@ import {
   Get,
   Put,
   Body,
+  Request,
   Param,
   Res,
 } from '@nestjs/common';
@@ -36,11 +37,13 @@ export class FileController {
 
   @UseGuards(JwtAuthGuard)
   @Put('update')
-  async updateFile(@Body() file: File, @Res() req) {
+  async updateFile(@Body() file: File, @Request() req) {
     this.fileService.updateEntity(file);
 
+    console.log(req.user);
+
     let historic = new FileHistoric();
-    historic.user = await this.userService.findOne(req.user.userId);
+    historic.user = await this.userService.findOne(req.user.id);
     historic.message = 'UPDATED';
     historic.modifiedIn = new Date(Date.now());
     historic.file = file;
