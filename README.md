@@ -165,13 +165,21 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ---
 
+## Contributors
+
+<a href="https://github.com/gabrielsants/workshop/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=gabrielsants/workshop" />
+</a>
+
 
 ## 📝 Licença
 
-Este projeto esta sobe a licença [MIT](./LICENSE).
+This project is under license [MIT](./LICENSE).
 
 
-Feito com ❤️ por Gabriel Santos 👋🏽 [Entre em contato!](https://www.linkedin.com/in/gabrielsants/)
+Made with ❤️ by Contributors 
+
+Contact me on [LinkedIn!](https://www.linkedin.com/in/dev-gabriel-santos/) 👋🏽
 
 <p>
 	<a href="https://www.buymeacoffee.com/gabrielsaints">
